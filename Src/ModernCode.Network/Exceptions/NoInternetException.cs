@@ -1,4 +1,4 @@
-﻿using System.Net.Http;
+﻿using System;
 
 namespace ModernCode.Network.Exceptions
 {
@@ -8,7 +8,7 @@ namespace ModernCode.Network.Exceptions
         {
         }
 
-        public NoInternetException(HttpRequestException inner) : base("No internet available", inner)
+        public NoInternetException(Exception inner) : base("No internet available", inner)
         {
         }
     }

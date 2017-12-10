@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 
 namespace ModernCode.Network.Exceptions
 {
@@ -9,7 +8,7 @@ namespace ModernCode.Network.Exceptions
         {
         }
 
-        public NetworkException(HttpRequestException inner) : base("Network exception", inner)
+        public NetworkException(Exception inner) : base("Network exception", inner)
         {
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using ModernCode.Network.Diagnostics;
 
 namespace ModernCode.Network
 {
@@ -7,6 +8,7 @@ namespace ModernCode.Network
     {
         public HttpMessageHandler Handler { get; set; }
         public Func<bool> IsInternetFunc { get; set; }
-        public ILogger Logger { get; set; }
+        public IDiagnosticService Diagnostic { get; set; }
+        public bool IsDiagnosticsEnabled => Diagnostic?.IsEnabled ?? false;
     }
 }

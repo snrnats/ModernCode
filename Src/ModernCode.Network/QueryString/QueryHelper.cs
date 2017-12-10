@@ -77,7 +77,7 @@ namespace ModernCode.Network.QueryString
                 {
                     if (value != null)
                     {
-                        var values = (Dictionary<string, IList<string>>)value;
+                        var values = (Dictionary<string, IList<string>>) value;
                         foreach (var pair in values)
                         {
                             foreach (var v in pair.Value)
