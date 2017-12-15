@@ -26,6 +26,9 @@ namespace ModernCode.Network
 
         public HttpClient HttpClient { get; }
 
+
+        public bool IsDiagnosticsEnabled => _configuration?.Diagnostic?.IsEnabled ?? false;
+
         public void Dispose()
         {
             HttpClient.Dispose();

@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.0
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernCode.Network", "ModernCode.Network\ModernCode.Network.csproj", "{7065EEE3-4A76-4677-9DD4-512BAA47B768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernCode.Utils", "ModernCode.Utils\ModernCode.Utils.csproj", "{2B205975-FD9E-4616-9C47-02C64DC59603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernCode.Utils", "ModernCode.Utils\ModernCode.Utils.csproj", "{2B205975-FD9E-4616-9C47-02C64DC59603}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{3C7447CE-0103-4016-99D2-662534711AAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernCode.Network.Sample", "ModernCode.Network.Sample\ModernCode.Network.Sample.csproj", "{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{2B205975-FD9E-4616-9C47-02C64DC59603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B205975-FD9E-4616-9C47-02C64DC59603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B205975-FD9E-4616-9C47-02C64DC59603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C3C0F9E-5E62-4A85-886B-4F7FD7FCE318} = {3C7447CE-0103-4016-99D2-662534711AAF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4D90E34-9F07-4B2D-ADE3-9BB6E6F3A760}

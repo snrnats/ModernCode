@@ -9,6 +9,5 @@ namespace ModernCode.Network
         public HttpMessageHandler Handler { get; set; }
         public Func<bool> IsInternetFunc { get; set; }
         public IDiagnosticService Diagnostic { get; set; }
-        public bool IsDiagnosticsEnabled => Diagnostic?.IsEnabled ?? false;
     }
 }
