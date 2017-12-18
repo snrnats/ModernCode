@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ModernCode.Network.QueryString;
 
 namespace ModernCode.Network.Sample.Entities
 {
-    class WeatherRequest
+    internal class WeatherRequest
     {
+        [QueryParameter("q")]
         public string City { get; set; }
-        
+
+        [QueryParameter("appid")]
         public string AppId { get; set; }
     }
 }
