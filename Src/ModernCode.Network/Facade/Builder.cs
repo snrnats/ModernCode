@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using ModernCode.Network.Exceptions;
+using ModernCode.Utils.Extensions;
 
 namespace ModernCode.Network.Facade
 {
@@ -12,11 +14,25 @@ namespace ModernCode.Network.Facade
             _func = func;
         }
 
-        public Builder<T> Wrap(Func<Func<Task>, Task<T>> wrap)
+        public Builder<T> Handle<TError>(Action<ServerException, TError> handler)
         {
-            var func = _func;
-            _func = () => wrap(func);
+            return Wrap(func => CommonFacades.Handle(func, handler));
+        }
+
+        public Builder<T> Try<TException>(int attempts) where TException:Exception
+        {
+            return Wrap(func => CommonFacades.Retry<T, TException>(func, attempts));
+        }
+
+        public Builder<T> Wrap(Func<Func<Task<T>>, Task<T>> wrap)
+        {
+            _func = _func.Wrap(wrap);
             return this;
+        }
+
+        public Task<T> Do()
+        {
+            return _func();
         }
     }
 }

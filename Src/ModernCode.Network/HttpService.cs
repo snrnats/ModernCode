@@ -86,12 +86,12 @@ namespace ModernCode.Network
             return response;
         }
 
-        public async Task<HttpResponseMessage> SendAsync(HttpMethod httpMethod, string url, HttpContent content, CancellationToken token)
+        public async Task<HttpResponseMessage> SendAsync(HttpMethod httpMethod, string url, HttpContent content, CancellationToken token = default(CancellationToken))
         {
             return await SendInternalAsync(httpMethod, url, content, token).ConfigureAwait(false);
         }
 
-        public async Task<T> SendAsync<T>(HttpMethod httpMethod, string url, HttpContent content, CancellationToken token)
+        public async Task<T> SendAsync<T>(HttpMethod httpMethod, string url, HttpContent content, CancellationToken token = default(CancellationToken))
         {
             var response = await SendAsync(httpMethod, url, content, token).ConfigureAwait(false);
             var responseText = await response.Content.ReadAsStringAsync().WithCancellation(token).ConfigureAwait(false);
