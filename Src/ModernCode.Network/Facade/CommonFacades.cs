@@ -37,7 +37,10 @@ namespace ModernCode.Network.Facade
                 try
                 {
                     var errorResponse = JsonConvert.DeserializeObject<TError>(e.Response);
-                    handler(e, errorResponse);
+                    if (errorResponse != null)
+                    {
+                        handler(e, errorResponse);
+                    }
                 }
                 catch (JsonException)
                 {
